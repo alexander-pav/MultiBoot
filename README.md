@@ -19,34 +19,60 @@ parted /dev/block/sda
 p
 
 Model: SKhynix H28U74301AMR (scsi)
+
 Disk /dev/block/sda: 59.1GB
+
 Sector size (logical/physical): 4096B/4096B
+
 Partition Table: gpt
+
 Disk Flags: 
+
 
 Number  Start   End     Size    File system  Name        Flags
 
  1      24.6kB  41.0kB  16.4kB               switch
+ 
  2      41.0kB  73.7kB  32.8kB               ssd
+ 
  3      73.7kB  524kB   451kB                bk01
+ 
  4      524kB   786kB   262kB                bk02
+ 
  5      786kB   1049kB  262kB                bk03
+ 
  6      1049kB  1573kB  524kB                keystore
+ 
  7      1573kB  2097kB  524kB                frp
+ 
  8      2097kB  4194kB  2097kB               bk04
+ 
  9      4194kB  8389kB  4194kB               misc
+ 
 10      8389kB  16.8MB  8389kB               logfs
+
 11      16.8MB  33.6MB  16.8MB               oops
+
 12      33.6MB  50.3MB  16.8MB               devinfo
+
 13      50.3MB  67.1MB  16.8MB               bk05
+
 14      67.1MB  134MB   67.1MB  ext4         persist
+
 15      134MB   201MB   67.1MB  ext4         persistbak
+
 16      201MB   268MB   67.1MB               logdump
+
 17      268MB   403MB   134MB                minidump
+
 18      403MB   1275MB  872MB   ext4         cust
+
 19      1275MB  1342MB  67.1MB               recovery
+
 20      1342MB  1611MB  268MB   ext4         cache
+
 21      1611MB  59.1GB  57.5GB               userdata
+
 
 # Split userdata (DANGEROUS!!! YOU CAN BRICK YOUR PHONE!!! REALLY!!!)
 rm 21
