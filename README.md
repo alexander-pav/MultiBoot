@@ -1,9 +1,8 @@
-# MultiBoot Poco F1  Step by step Instruction
+# MultiBoot Poco F1 (64GB version) Step by step Instruction
 https://youtu.be/gOMUqic2Fwk
 
-
 # PostmarketOS + Android + Windows on UFS multi boot (DANGEROUS!!! YOU CAN BRICK YOUR PHONE!!! USE IT AT YOUR OWN RISK!!!)
-(POCO F1 64GB version)
+
 
 # Connect USB cable and boot TWRP recovery
 # Download parted for android arm64 https://pwdx.lanzoux.com/iUgSEmkrlmh copy to utils
