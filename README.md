@@ -79,8 +79,8 @@ cd MULTI_BOOT/linux
 sudo ./install.sh
 
 # Windows (USE AT YOUR OWN RISK!!! CHECK IF YOUR BOOT PARTITION AT \\?\Device\Harddisk4\Partition45)
-# Download dd for Windows http://www.chrysocome.net/downloads/ddrelease64.exe copy to MULTI_BOOT/windows dir
-cd MULTI_BOOT/windows
+# Download dd for Windows http://www.chrysocome.net/downloads/ddrelease64.exe copy to windows dir
+cd windows
 
 # Run as administrator
 install.bat 
