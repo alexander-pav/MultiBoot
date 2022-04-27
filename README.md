@@ -1,4 +1,4 @@
-# MultiBoot Poco F1 Multiboot Step by step Instruction
+# MultiBoot Poco F1  Step by step Instruction
 https://youtu.be/gOMUqic2Fwk
 
 
