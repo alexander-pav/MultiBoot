@@ -176,8 +176,11 @@ reboot
 1. Android on userdata partition (https://wiki.lineageos.org/devices/beryllium/install)
 2. Windows on win partition (https://renegade-project.org/#/en/windows/Installation-guide)
 3. PostmarketOS on lnx partition (https://wiki.postmarketos.org/wiki/Xiaomi_Poco_F1_(xiaomi-beryllium)
-pmbootstrap flasher flash_rootfs --partition lnx  
-OR  
+
+pmbootstrap flasher flash_rootfs --partition lnx
+
+OR
+
 fastboot flash lnx postmarketos.img)
 
 # Copy boot files (android_boot.img(rooted), postmarketos_boot.img and windows_boot.img) into MULTI_BOOT/boot
