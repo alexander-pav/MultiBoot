@@ -25,6 +25,7 @@ Partition Table: gpt
 Disk Flags: 
 
 Number  Start   End     Size    File system  Name        Flags
+
  1      24.6kB  41.0kB  16.4kB               switch
  2      41.0kB  73.7kB  32.8kB               ssd
  3      73.7kB  524kB   451kB                bk01
