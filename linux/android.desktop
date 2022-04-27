@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Android
+Comment=Android
+Exec=sudo /usr/share/multiboot/android.sh
+Icon=/usr/share/multiboot/android.svg
+Terminal=false
+Type=Application
+Keywords=android;
+SingleMainWindow=true
+X-GNOME-UsesNotifications=true
+X-GNOME-SingleWindow=true

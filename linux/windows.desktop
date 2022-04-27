@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Windows
+Comment=Windows
+Exec=sudo /usr/share/multiboot/windows.sh
+Icon=/usr/share/multiboot/windows.svg
+Terminal=false
+Type=Application
+Keywords=android;
+SingleMainWindow=true
+X-GNOME-UsesNotifications=true
+X-GNOME-SingleWindow=true
