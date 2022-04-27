@@ -1,7 +1,6 @@
-# MultiBoot
+# MultiBoot Poco F1 Multiboot Step by step Instruction
 https://youtu.be/gOMUqic2Fwk
 
-Poco F1 Multiboot Step by step Instruction
 
 # PostmarketOS + Android + Windows on UFS multi boot (DANGEROUS!!! YOU CAN BRICK YOUR PHONE!!! USE IT AT YOUR OWN RISK!!!)
 (POCO F1 64GB version)
@@ -74,7 +73,7 @@ Number  Start   End     Size    File system  Name        Flags
 21      1611MB  59.1GB  57.5GB               userdata
 
 
-# Split userdata (DANGEROUS!!! YOU CAN BRICK YOUR PHONE!!! REALLY!!!)
+# Split userdata
 rm 21
 # Create a partition for Android
 mkpart esp fat32 1611MB 1900MB
@@ -86,32 +85,59 @@ set 21 esp on
 
 # Printing modified partitions
 p
+
 Number  Start   End     Size    File system  Name        Flags
+
  1      24.6kB  41.0kB  16.4kB               switch
+ 
  2      41.0kB  73.7kB  32.8kB               ssd
+ 
  3      73.7kB  524kB   451kB                bk01
+ 
  4      524kB   786kB   262kB                bk02
+ 
  5      786kB   1049kB  262kB                bk03
+ 
  6      1049kB  1573kB  524kB                keystore
+ 
  7      1573kB  2097kB  524kB                frp
+ 
  8      2097kB  4194kB  2097kB               bk04
+ 
  9      4194kB  8389kB  4194kB               misc
+ 
 10      8389kB  16.8MB  8389kB               logfs
+
 11      16.8MB  33.6MB  16.8MB               oops
+
 12      33.6MB  50.3MB  16.8MB               devinfo
+
 13      50.3MB  67.1MB  16.8MB               bk05
+
 14      67.1MB  134MB   67.1MB  ext4         persist
+
 15      134MB   201MB   67.1MB  ext4         persistbak
+
 16      201MB   268MB   67.1MB               logdump
+
 17      268MB   403MB   134MB                minidump
+
 18      403MB   1275MB  872MB   ext4         cust
+
 19      1275MB  1342MB  67.1MB               recovery
+
 20      1342MB  1611MB  268MB   ext4         cache
+
 21      1611MB  1900MB  289MB   fat32        esp         boot, esp
+
 22      1900MB  25.0GB  23.1GB  ext4         userdata
+
 23      25.0GB  50.0GB  25.0GB  ntfs         win         msftdata
+
 24      50.0GB  58.1GB  8099MB  ext4         lnx
+
 25      58.1GB  59.1GB  964MB   fat32        pe          msftdata
+
 
 # Quit parted
 quit
