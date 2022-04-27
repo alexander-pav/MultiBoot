@@ -18,9 +18,13 @@ parted /dev/block/sda
 p
 
 Model: SKhynix H28U74301AMR (scsi)
+
 Disk /dev/block/sda: 59.1GB
+
 Sector size (logical/physical): 4096B/4096B
+
 Partition Table: gpt
+
 Disk Flags: 
 
 
@@ -73,11 +77,17 @@ Number  Start   End     Size    File system  Name        Flags
 rm 21
 # Create a partition for Android
 mkpart esp fat32 1611MB 1900MB
+
 mkpart userdata ext4 1900MB 25GB
+
 mkpart win ntfs 25GB 50GB 
+
 mkpart lnx ext4 50GB 58.1GB
+
 mkpart pe fat32 58.1GB 59.1GB
+
 set 21 esp on
+
 
 # Printing modified partitions
 p
@@ -146,10 +156,15 @@ adb shell
 
 # Format the partions
 mkfs.fat -F32 -s1 /dev/block/by-name/esp
+
 mkfs.ntfs -f /dev/block/by-name/win
+
 mke2fs -t ext4 /dev/block/by-name/userdata
+
 mke2fs -t ext4 /dev/block/by-name/lnx
+
 mkfs.fat -F32 -s1 /dev/block/by-name/pe
+
 
 # Reboot to TWRP again
 reboot
@@ -168,18 +183,18 @@ reboot
 # Android (root required)
 # 1. Install TERMUX & TERMUX WIDGETS (FDROID)
 # 2. From android dir run install.sh
-# //2. Copy boot dir to /sdcard/multiboot/boot
-# //3. Copy android/*.sh files to /data/data/com.termux/files/home/.shortcuts
-# //4. chmod 777 /data/data/com.termux/files/home/.shortcuts/*.sh
 # 3. Create termux widgets (windows.sh, pmos.sh)
 
 # PostmarketOS
 cd MULTI_BOOT/linux
+
 sudo ./install.sh
 
 # Windows (USE AT YOUR OWN RISK!!! CHECK IF YOUR BOOT PARTITION AT \\?\Device\Harddisk4\Partition45)
 # Download dd for Windows http://www.chrysocome.net/downloads/ddrelease64.exe copy to MULTI_BOOT/windows dir
 cd MULTI_BOOT/windows
+
 # Run as administrator
+
 install.bat 
 
