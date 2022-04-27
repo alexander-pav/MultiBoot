@@ -9,9 +9,11 @@ https://youtu.be/gOMUqic2Fwk
 # Download parted for android arm64 https://pwdx.lanzoux.com/iUgSEmkrlmh copy to utils
 # Copy parted to the phone 
 adb push utils/parted /sdcard/
+
 adb shell
 # Move parted to sbin directory
 cp /sdcard/parted /sbin/ && chmod 755 /sbin/parted
+
 parted /dev/block/sda
 
 # Printing stock partitions 
@@ -75,6 +77,7 @@ Number  Start   End     Size    File system  Name        Flags
 
 # Split userdata
 rm 21
+
 # Create a partition for Android
 mkpart esp fat32 1611MB 1900MB
 
