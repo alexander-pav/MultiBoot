@@ -18,13 +18,9 @@ parted /dev/block/sda
 p
 
 Model: SKhynix H28U74301AMR (scsi)
-
 Disk /dev/block/sda: 59.1GB
-
 Sector size (logical/physical): 4096B/4096B
-
 Partition Table: gpt
-
 Disk Flags: 
 
 
