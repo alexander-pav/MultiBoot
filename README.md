@@ -1,78 +1,23 @@
-# MultiBoot Poco F1 (64GB version) Step by step Instruction
+# Multi Boot PostmarketOS + Android + Windows Poco F1 (64GB version) Step by step Instruction
 https://youtu.be/gOMUqic2Fwk
 
-# PostmarketOS + Android + Windows on UFS multi boot (DANGEROUS!!! YOU CAN BRICK YOUR PHONE!!! USE IT AT YOUR OWN RISK!!!)
+# WARNING! YOU CAN BRICK YOUR PHONE! USE IT AT YOUR OWN RISK!
 
 
-# Connect USB cable and boot TWRP recovery
+# Boot TWRP recovery
 # Download parted for android arm64 https://pwdx.lanzoux.com/iUgSEmkrlmh copy to utils
 # Copy parted to the phone 
 adb push utils/parted /sdcard/
 
 adb shell
+
 # Move parted to sbin directory
 cp /sdcard/parted /sbin/ && chmod 755 /sbin/parted
 
 parted /dev/block/sda
 
-# Printing stock partitions 
-p
-
-Model: SKhynix H28U74301AMR (scsi)
-
-Disk /dev/block/sda: 59.1GB
-
-Sector size (logical/physical): 4096B/4096B
-
-Partition Table: gpt
-
-Disk Flags: 
-
-
-Number  Start   End     Size    File system  Name        Flags
-
- 1      24.6kB  41.0kB  16.4kB               switch
- 
- 2      41.0kB  73.7kB  32.8kB               ssd
- 
- 3      73.7kB  524kB   451kB                bk01
- 
- 4      524kB   786kB   262kB                bk02
- 
- 5      786kB   1049kB  262kB                bk03
- 
- 6      1049kB  1573kB  524kB                keystore
- 
- 7      1573kB  2097kB  524kB                frp
- 
- 8      2097kB  4194kB  2097kB               bk04
- 
- 9      4194kB  8389kB  4194kB               misc
- 
-10      8389kB  16.8MB  8389kB               logfs
-
-11      16.8MB  33.6MB  16.8MB               oops
-
-12      33.6MB  50.3MB  16.8MB               devinfo
-
-13      50.3MB  67.1MB  16.8MB               bk05
-
-14      67.1MB  134MB   67.1MB  ext4         persist
-
-15      134MB   201MB   67.1MB  ext4         persistbak
-
-16      201MB   268MB   67.1MB               logdump
-
-17      268MB   403MB   134MB                minidump
-
-18      403MB   1275MB  872MB   ext4         cust
-
-19      1275MB  1342MB  67.1MB               recovery
-
-20      1342MB  1611MB  268MB   ext4         cache
-
-21      1611MB  59.1GB  57.5GB               userdata
-
+# Stock partitions 
+![Screenshot from 2022-04-27 16-31-10](https://user-images.githubusercontent.com/19728262/165509361-a32c0de3-73c6-426b-ade5-908bb1a94b8d.png)
 
 # Delete userdata
 rm 21
@@ -91,70 +36,13 @@ mkpart pe fat32 58.1GB 59.1GB
 set 21 esp on
 
 
-# Printing modified partitions
-p
+# Modified partitions
 
-Number  Start   End     Size    File system  Name        Flags
-
- 1      24.6kB  41.0kB  16.4kB               switch
- 
- 2      41.0kB  73.7kB  32.8kB               ssd
- 
- 3      73.7kB  524kB   451kB                bk01
- 
- 4      524kB   786kB   262kB                bk02
- 
- 5      786kB   1049kB  262kB                bk03
- 
- 6      1049kB  1573kB  524kB                keystore
- 
- 7      1573kB  2097kB  524kB                frp
- 
- 8      2097kB  4194kB  2097kB               bk04
- 
- 9      4194kB  8389kB  4194kB               misc
- 
-10      8389kB  16.8MB  8389kB               logfs
-
-11      16.8MB  33.6MB  16.8MB               oops
-
-12      33.6MB  50.3MB  16.8MB               devinfo
-
-13      50.3MB  67.1MB  16.8MB               bk05
-
-14      67.1MB  134MB   67.1MB  ext4         persist
-
-15      134MB   201MB   67.1MB  ext4         persistbak
-
-16      201MB   268MB   67.1MB               logdump
-
-17      268MB   403MB   134MB                minidump
-
-18      403MB   1275MB  872MB   ext4         cust
-
-19      1275MB  1342MB  67.1MB               recovery
-
-20      1342MB  1611MB  268MB   ext4         cache
-
-21      1611MB  1900MB  289MB   fat32        esp         boot, esp
-
-22      1900MB  25.0GB  23.1GB  ext4         userdata
-
-23      25.0GB  50.0GB  25.0GB  ntfs         win         msftdata
-
-24      50.0GB  58.1GB  8099MB  ext4         lnx
-
-25      58.1GB  59.1GB  964MB   fat32        pe          msftdata
+![Screenshot from 2022-04-27 16-32-38](https://user-images.githubusercontent.com/19728262/165509440-9f1c820e-efa5-4fb2-a2f5-8b6e79412918.png)
 
 
-# Quit parted
-quit
+# Reboot to TWRP 
 
-
-# Reboot to TWRP again
-reboot
-
-adb shell
 
 # Format partions
 mkfs.fat -F32 -s1 /dev/block/by-name/esp
@@ -168,8 +56,8 @@ mke2fs -t ext4 /dev/block/by-name/lnx
 mkfs.fat -F32 -s1 /dev/block/by-name/pe
 
 
-# Reboot to TWRP again
-reboot
+# Reboot 
+
 
 # INSTALL ANDROID POSTMARKETOS WINDOWS
 1. Android on userdata partition (https://wiki.lineageos.org/devices/beryllium/install)
@@ -178,7 +66,7 @@ reboot
 pmbootstrap flasher flash_rootfs --partition lnx
 
 
-# Copy boot files (android_boot.img(rooted), postmarketos_boot.img and windows_boot.img) into MULTI_BOOT/boot
+# Copy boot files (android_boot.img(rooted), postmarketos_boot.img and windows_boot.img) into boot dir
 
 # Android (root required)
 1. Install TERMUX & TERMUX WIDGETS (FDROID)
