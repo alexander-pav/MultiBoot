@@ -74,7 +74,7 @@ pmbootstrap flasher flash_rootfs --partition lnx
 3. Create termux widgets (windows.sh, pmos.sh)
 
 # PostmarketOS
-cd MULTI_BOOT/linux
+cd linux
 
 sudo ./install.sh
 
