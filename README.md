@@ -5,9 +5,9 @@ https://youtu.be/gOMUqic2Fwk
 
 
 # Boot TWRP recovery
-# Download parted for android arm64 https://pwdx.lanzoux.com/iUgSEmkrlmh copy to utils
+# Download parted for android https://pwdx.lanzoux.com/iUgSEmkrlmh 
 # Copy parted to the phone 
-adb push utils/parted /sdcard/
+adb push parted /sdcard/
 
 adb shell
 
