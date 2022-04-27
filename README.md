@@ -1,5 +1,7 @@
 # MultiBoot
-Poco F1 Multiboot
+https://youtu.be/gOMUqic2Fwk
+
+Poco F1 Multiboot Step by step Instruction
 
 # PostmarketOS + Android + Windows on UFS multi boot (DANGEROUS!!! YOU CAN BRICK YOUR PHONE!!! USE IT AT YOUR OWN RISK!!!)
 (POCO F1 64GB version)
@@ -120,7 +122,7 @@ reboot
 # //2. Copy boot dir to /sdcard/multiboot/boot
 # //3. Copy android/*.sh files to /data/data/com.termux/files/home/.shortcuts
 # //4. chmod 777 /data/data/com.termux/files/home/.shortcuts/*.sh
-# 5. Create termux widgets (windows.sh, pmos.sh)
+# 3. Create termux widgets (windows.sh, pmos.sh)
 
 # PostmarketOS
 cd MULTI_BOOT/linux
