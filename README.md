@@ -75,10 +75,10 @@ Number  Start   End     Size    File system  Name        Flags
 21      1611MB  59.1GB  57.5GB               userdata
 
 
-# Split userdata
+# Delete userdata
 rm 21
 
-# Create a partition for Android
+# Create new partitions
 mkpart esp fat32 1611MB 1900MB
 
 mkpart userdata ext4 1900MB 25GB
@@ -157,7 +157,7 @@ reboot
 
 adb shell
 
-# Format the partions
+# Format partions
 mkfs.fat -F32 -s1 /dev/block/by-name/esp
 
 mkfs.ntfs -f /dev/block/by-name/win
@@ -173,20 +173,19 @@ mkfs.fat -F32 -s1 /dev/block/by-name/pe
 reboot
 
 # INSTALL ANDROID POSTMARKETOS WINDOWS
-# 1. Android on userdata partition (https://wiki.lineageos.org/devices/beryllium/install)
-# 2. Windows on win partition (https://renegade-project.org/#/en/windows/Installation-guide)
-# 3. PostmarketOS on lnx partition (https://wiki.postmarketos.org/wiki/Xiaomi_Poco_F1_(xiaomi-beryllium)
-# pmbootstrap flasher flash_rootfs --partition lnx  
-# OR  fastboot flash lnx postmarketos.img)
-
+1. Android on userdata partition (https://wiki.lineageos.org/devices/beryllium/install)
+2. Windows on win partition (https://renegade-project.org/#/en/windows/Installation-guide)
+3. PostmarketOS on lnx partition (https://wiki.postmarketos.org/wiki/Xiaomi_Poco_F1_(xiaomi-beryllium)
+pmbootstrap flasher flash_rootfs --partition lnx  
+OR  
+fastboot flash lnx postmarketos.img)
 
 # Copy boot files (android_boot.img(rooted), postmarketos_boot.img and windows_boot.img) into MULTI_BOOT/boot
 
-# Flash boot from running OS
 # Android (root required)
-# 1. Install TERMUX & TERMUX WIDGETS (FDROID)
-# 2. From android dir run install.sh
-# 3. Create termux widgets (windows.sh, pmos.sh)
+1. Install TERMUX & TERMUX WIDGETS (FDROID)
+2. From android dir run install.sh
+3. Create termux widgets (windows.sh, pmos.sh)
 
 # PostmarketOS
 cd MULTI_BOOT/linux
@@ -198,6 +197,5 @@ sudo ./install.sh
 cd MULTI_BOOT/windows
 
 # Run as administrator
-
 install.bat 
 
