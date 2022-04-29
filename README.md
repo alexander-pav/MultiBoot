@@ -69,7 +69,7 @@ Reboot
 3. PostmarketOS on lnx partition (https://wiki.postmarketos.org/wiki/Xiaomi_Poco_F1_(xiaomi-beryllium)
 pmbootstrap flasher flash_rootfs --partition lnx
 
-Root android then backup boot partition from TWRP and copy it to the boot directory as android_boot.img
+Root android then backup boot partition from TWRP
 
 Copy boot files as (android_boot.img, postmarketos_boot.img and windows_boot.img) into boot dir
 
