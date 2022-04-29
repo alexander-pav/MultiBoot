@@ -52,11 +52,8 @@ Format partions
 ```
 mkfs.fat -F32 -s1 /dev/block/by-name/esp
 mkfs.ntfs -f /dev/block/by-name/win
-
 mke2fs -t ext4 /dev/block/by-name/userdata
-
 mke2fs -t ext4 /dev/block/by-name/lnx
-
 mkfs.fat -F32 -s1 /dev/block/by-name/pe
 ```
 
