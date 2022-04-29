@@ -1,7 +1,8 @@
-#Multi Boot PostmarketOS + Android + Windows Poco F1 (64GB version) Step by step Instruction
-#https://youtu.be/gOMUqic2Fwk
+# Multi Boot PostmarketOS + Android + Windows Poco F1 (64GB version) Step by step Instruction
 
-#WARNING! YOU CAN BRICK YOUR PHONE! USE IT AT YOUR OWN RISK!
+# https://youtu.be/gOMUqic2Fwk
+
+# WARNING! YOU CAN BRICK YOUR PHONE! USE IT AT YOUR OWN RISK!
 
 
 Boot TWRP recovery
