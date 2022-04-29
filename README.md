@@ -14,28 +14,28 @@ adb shell
 ```
 
 # Move parted to sbin directory
+```
 cp /sdcard/parted /sbin/ && chmod 755 /sbin/parted
-
 parted /dev/block/sda
+```
 
 # Stock partitions 
 ![Screenshot from 2022-04-27 16-31-10](https://user-images.githubusercontent.com/19728262/165509361-a32c0de3-73c6-426b-ade5-908bb1a94b8d.png)
 
 # Delete userdata
+```
 rm 21
+```
 
 # Create new partitions
+```
 mkpart esp fat32 1611MB 1900MB
-
 mkpart userdata ext4 1900MB 25GB
-
 mkpart win ntfs 25GB 50GB 
-
 mkpart lnx ext4 50GB 58.1GB
-
 mkpart pe fat32 58.1GB 59.1GB
-
 set 21 esp on
+```
 
 
 # Modified partitions
