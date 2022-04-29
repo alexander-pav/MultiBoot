@@ -67,12 +67,12 @@ Reboot
 3. PostmarketOS on lnx partition (https://wiki.postmarketos.org/wiki/Xiaomi_Poco_F1_(xiaomi-beryllium)
 pmbootstrap flasher flash_rootfs --partition lnx
 
-
-Copy boot files (android_boot.img(rooted), postmarketos_boot.img and windows_boot.img) into boot dir
+Root android then backup boot partition from TWRP and copy it to the boot directory as android_boot.img
+Copy boot files as (android_boot.img, postmarketos_boot.img and windows_boot.img) into boot dir
 
 # Android (root required)
 1. Install TERMUX & TERMUX WIDGETS (FDROID)
-2. From android dir run 
+2. Run from host computer 
 ```
 cd android
 install.sh
@@ -80,6 +80,7 @@ install.sh
 3. Create termux widgets (windows.sh, pmos.sh)
 
 # PostmarketOS
+Copy instalation files to postmarketos and run
 ```
 cd linux
 sudo ./install.sh
@@ -88,10 +89,11 @@ sudo ./install.sh
 # Windows 
 # WARNING! CHECK IF YOUR BOOT PARTITION AT \\?\Device\Harddisk4\Partition45
 Download dd for Windows http://www.chrysocome.net/downloads/ddrelease64.exe copy to windows dir
+Copy instalation files to windows and run
 ```
 cd windows
 
-Run as administrator
+As administrator
 install.bat 
 ```
 
