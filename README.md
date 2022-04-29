@@ -70,7 +70,9 @@ Reboot
 pmbootstrap flasher flash_rootfs --partition lnx
 
 Root android then backup boot partition from TWRP and copy it to the boot directory as android_boot.img
+
 Copy boot files as (android_boot.img, postmarketos_boot.img and windows_boot.img) into boot dir
+
 
 # Android (root required)
 1. Install TERMUX & TERMUX WIDGETS (FDROID)
