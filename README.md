@@ -1,15 +1,16 @@
-# Multi Boot PostmarketOS + Android + Windows Poco F1 (64GB version) Step by step Instruction
-https://youtu.be/gOMUqic2Fwk
+#Multi Boot PostmarketOS + Android + Windows Poco F1 (64GB version) Step by step Instruction
+#https://youtu.be/gOMUqic2Fwk
 
-# WARNING! YOU CAN BRICK YOUR PHONE! USE IT AT YOUR OWN RISK!
+#WARNING! YOU CAN BRICK YOUR PHONE! USE IT AT YOUR OWN RISK!
 
 
-# Boot TWRP recovery
-# Download parted for android https://pwdx.lanzoux.com/iUgSEmkrlmh 
-# Copy parted to the phone 
+Boot TWRP recovery
+Download parted for android https://pwdx.lanzoux.com/iUgSEmkrlmh 
+Copy parted to the phone 
+```
 adb push parted /sdcard/
-
 adb shell
+```
 
 # Move parted to sbin directory
 cp /sdcard/parted /sbin/ && chmod 755 /sbin/parted
