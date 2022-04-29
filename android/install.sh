@@ -9,5 +9,5 @@ adb shell "su -c 'cp /sdcard/multiboot/*.sh /data/data/com.termux/files/home/.sh
 #/data/data/com.termux/files/home
 
 # FIXME: Backup boot partition without TWRP
-# su -c "dd if=/dev/block/by-name/boot of=/sdcard/multiboot/boot/android_boot.img"
+# adb shell "su -c 'dd if=/dev/block/by-name/boot of=/sdcard/multiboot/boot/android_boot.img'"
 # adb pull /sdcard/multiboot/boot/android_boot.img  ../boot/
