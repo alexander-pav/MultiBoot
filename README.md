@@ -6,7 +6,9 @@
 
 
 Boot TWRP recovery
+
 Download parted for android https://pwdx.lanzoux.com/iUgSEmkrlmh 
+
 Copy parted to the phone 
 ```
 adb push parted /sdcard/
