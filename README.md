@@ -88,7 +88,8 @@ sudo ./install.sh
 ```
 
 # Windows 
-# WARNING! CHECK IF YOUR BOOT PARTITION AT \\?\Device\Harddisk4\Partition45
+# WARNING! CHECK IF YOUR BOOT PARTITION AT 
+# \\?\Device\Harddisk4\Partition45
 
 Download dd for Windows http://www.chrysocome.net/downloads/ddrelease64.exe copy to windows dir
 
